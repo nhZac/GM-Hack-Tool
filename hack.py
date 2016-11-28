@@ -9,6 +9,7 @@ Player_speed = input('Enter Player ' + str(player_number) + ' Speed:')
 #Loop to get all remaining players name and speed
 while Player_name:
 	player_list[Player_name] = int(Player_speed)
+	player_number += 1
 	Player_name = input('Enter Player ' + str(player_number) + ' Name (blank to end):')
 	Player_speed = input('Enter Player ' + str(player_number) + ' Speed:')
 #outputs for players and their speeds
