@@ -4,14 +4,14 @@ player_list = {}
 player_number = 1
 
 #Asks for the first players name and speed
-Player_name = input('Enter Player ' + str(player_number) + ' Name (blank to end):')
-Player_speed = input('Enter Player ' + str(player_number) + ' Speed:')
+player_name = input('Enter Player ' + str(player_number) + ' Name (blank to end):')
+player_speed = input('Enter Player ' + str(player_number) + ' Speed:')
 #Loop to get all remaining players name and speed
-while Player_name:
-	player_list[Player_name] = int(Player_speed)
+while player_name:
+	player_list[player_name] = int(player_speed)
 	player_number += 1
-	Player_name = input('Enter Player ' + str(player_number) + ' Name (blank to end):')
-	Player_speed = input('Enter Player ' + str(player_number) + ' Speed:')
+	player_name = input('Enter Player ' + str(player_number) + ' Name (blank to end):')
+	player_speed = input('Enter Player ' + str(player_number) + ' Speed:')
 #outputs for players and their speeds
 for name, speed in player_list.items():
     print (name + "'s", 'speed is', speed)
