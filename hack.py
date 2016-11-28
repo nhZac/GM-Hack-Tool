@@ -3,7 +3,7 @@ print ('Welcome to Hackmaster calculator...')
 player_list = {}
 player_number = 1
 
-#Asks for the first players name and speed
+#Function to request player information
 def getplayerinfo():
 	player_name = input('Enter Player ' + str(player_number) + ' Name (blank to end):')
 	if player_name:
