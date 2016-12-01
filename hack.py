@@ -3,8 +3,10 @@ print ('Welcome to Hackmaster calculator...')
 player_list = {}
 
 #Function to request player information
-def getplayerinfo(player_number):
-	player_name = input('Enter Player ' + str(player_number) + ' Name (blank to end):')
+
+#Need to create error handling for no name entries
+def  getPlayerInfo(player_number):
+	player_name = input('Enter Player ' + str(player_number) + ' Name:')
 	if player_name:
 		if player_name not in player_list:
 			player_speed = input('Enter Player ' + str(player_number) + ' Speed:')
@@ -15,16 +17,16 @@ def getplayerinfo(player_number):
 	else:
 		return False, False
 #Loop to get all remaining players name and speed
-def getplayers():
+def getPlayers():
 	player_number = 1
-	player_name, player_speed = getplayerinfo(player_number)
+	player_name, player_speed = getPlayerInfo(player_number)
 	while player_name:
 		if player_name not in player_list:
 			player_list[player_name] = player_speed
 			player_number += 1
-		player_name, player_speed = getplayerinfo(player_number)
+		player_name, player_speed = getPlayerInfo(player_number)
 #runs get player function
-getplayers()
+getPlayers()
 #outputs for players and their speeds
 for name, speed in player_list.items():
     print (name + "'s", 'speed is', speed)
