@@ -3,8 +3,6 @@ print ('Welcome to Hackmaster calculator...')
 player_list = {}
 
 #Function to request player information
-
-#Need to create error handling for no name entries
 def  getPlayerInfo(player_number):
 	player_name = input('Enter Player ' + str(player_number) + ' Name:')
 	if player_name:
@@ -25,8 +23,13 @@ def getPlayers():
 			player_list[player_name] = player_speed
 			player_number += 1
 		player_name, player_speed = getPlayerInfo(player_number)
+
 #runs get player function
 getPlayers()
+#error handling for empty player name on first entry
+if not player_list:
+	print ('You did not enter a name, did you mean to leave this blank.')
+	getPlayers()
 #outputs for players and their speeds
 for name, speed in player_list.items():
     print (name + "'s", 'speed is', speed)
